@@ -4,6 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.android7.Sem7.CurrencyFragments.Currency0ActivityFragment;
+import com.android7.Sem7.CurrencyFragments.Currency1ActivityFragment;
+import com.android7.Sem7.CurrencyFragments.Currency2ActivityFragment;
+import com.android7.Sem7.CurrencyFragments.Currency3ActivityFragment;
+
 public class MyPagerAdapter extends FragmentStatePagerAdapter{
 
     @Override

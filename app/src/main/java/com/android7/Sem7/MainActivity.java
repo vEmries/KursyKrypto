@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android7.constrainlayoutexample.R;
+import com.android7.Sem7.R;
 
 public class MainActivity extends AppCompatActivity {
 

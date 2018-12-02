@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android7.Sem7.Currency2ActivityFragment"
+    tools:context="com.android7.Sem7.CurrencyFragments.Currency2ActivityFragment"
     tools:showIn="@layout/activity_main">
 
     <ImageView

@@ -1,4 +1,4 @@
-package com.android7.Sem7;
+package com.android7.Sem7.CurrencyFragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.android7.constrainlayoutexample.R;
+import com.android7.Sem7.CurrencyData;
+import com.android7.Sem7.R;
 
 /**
  * A placeholder fragment containing a simple view.
