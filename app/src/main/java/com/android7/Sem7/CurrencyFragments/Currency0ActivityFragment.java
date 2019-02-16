@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android7.Sem7.CurrencyData;
+import com.android7.Sem7.CurrencyService;
 import com.android7.Sem7.R;
 
 /**
@@ -18,6 +19,8 @@ public class Currency0ActivityFragment extends Fragment {
     private TextView valueEURToBTC;
     private TextView valueEURToETH;
 
+    CurrencyService currencyService = new CurrencyService();
+
     public Currency0ActivityFragment() {
     }
 
@@ -25,6 +28,8 @@ public class Currency0ActivityFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_currency0, container, false);
+
+        currencyService.getAllCurrencyValues();
 
         valueEURToBTC = (TextView) view.findViewById(R.id.valueEURToBTC);
         valueEURToBTC.setText(CurrencyData.EUR_BTC.toString());
