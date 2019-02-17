@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        currencyService.getAllHistoricalValues();
     }
 
     public void updateTextViews() {

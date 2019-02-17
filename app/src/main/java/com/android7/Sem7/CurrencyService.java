@@ -89,4 +89,152 @@ public class CurrencyService {
 
         return responseStatus;
     }
+
+    public void getAllHistoricalValues() {
+
+        new HttpRequestTask(
+            new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=EUR&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                @Override
+                        public void response(HttpResponse response) {
+                    String rawData = response.body.substring(60);
+                    rawData = rawData.split("\\]") [0];
+
+                    String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.EUR_BTC_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" close :", "");
+
+                            CurrencyData.EUR_BTC_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                }
+            }).execute();
+
+        new HttpRequestTask(
+                new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=EUR&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        String rawData = response.body.substring(60);
+                        rawData = rawData.split("\\]") [0];
+
+                        String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.EUR_ETH_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" close :", "");
+
+                            CurrencyData.EUR_ETH_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                    }
+                }).execute();
+
+        new HttpRequestTask(
+                new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=PLN&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        String rawData = response.body.substring(60);
+                        rawData = rawData.split("\\]") [0];
+
+                        String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.PLN_BTC_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" close :", "");
+
+                            CurrencyData.PLN_BTC_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                    }
+                }).execute();
+
+        new HttpRequestTask(
+                new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=PLN&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        String rawData = response.body.substring(60);
+                        rawData = rawData.split("\\]") [0];
+
+                        String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.PLN_ETH_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" high :", "");
+
+                            CurrencyData.PLN_ETH_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                    }
+                }).execute();
+
+        new HttpRequestTask(
+                new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        String rawData = response.body.substring(60);
+                        rawData = rawData.split("\\]") [0];
+
+                        String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.USD_BTC_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" close :", "");
+
+                            CurrencyData.USD_BTC_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                    }
+                }).execute();
+
+        new HttpRequestTask(
+                new HttpRequest("https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=10" + "&api_key=" + API_KEY, HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        String rawData = response.body.substring(60);
+                        rawData = rawData.split("\\]") [0];
+
+                        String[] values = rawData.split(",");
+
+                        for (int i = 0; i < values.length; i += 7) {
+                            values[i] = values[i].replace('"', ' ');
+                            values[i] = values[i].replace("{ time :", "");
+
+                            CurrencyData.USD_ETH_HST.add(Integer.valueOf(values[i]));
+
+                            values[i + 1] = values[i + 1].replace('"', ' ');
+                            values[i + 1] = values[i + 1].replace(" close :", "");
+
+                            CurrencyData.USD_ETH_HST.add(Double.valueOf(values[i + 1]).intValue());
+                        }
+                    }
+                }).execute();
+        }
+
 }

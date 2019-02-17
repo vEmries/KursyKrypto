@@ -7,6 +7,7 @@
     tools:context="com.android7.Sem7.CurrencyFragments.Currency0ActivityFragment">
 
     <ImageView
+        android:id="@+id/iconBTCEUR"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -25,6 +26,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <ImageView
+        android:id="@+id/iconETHEUR"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -75,5 +77,30 @@
         android:text="__.__"
         android:textSize="20dp"
         android:textAlignment="center"/>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphBTCEUR"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueEURToBTC" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphETHEUR"
+        android:visibility="invisible"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueEURToBTC" />
 
 </android.support.constraint.ConstraintLayout>
